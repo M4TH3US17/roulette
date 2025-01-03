@@ -1,8 +1,15 @@
 import { CampanhaEntity, CampanhaEntityUniqueRefs, CampanhaUpdateEntity } from "src/Application/Entities/Campanha.entity";
 import { ICampanhaRepositoryContract } from "./ICampanhaRepository.contract";
+import { Repository } from "typeorm";
+import { InjectRepository } from "@nestjs/typeorm";
 
 export class CampanhaTypeOrmRepository implements ICampanhaRepositoryContract {
-    
+
+    constructor(
+        @InjectRepository(CampanhaEntity)
+        private readonly campanhaRepository: Repository<CampanhaEntity>,
+    ) { }
+
     create(entity: CampanhaEntity): Promise<CampanhaEntity> {
         throw new Error("Method not implemented.");
     }

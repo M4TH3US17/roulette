@@ -10,16 +10,16 @@ export class ReturnUseFactoryUseCase {
     public async execute(): Promise<DataSource> {
         console.log("Checking existing database connection...");
         const dataSource = new DataSource({
-            name: process.env.DB_NAME,
-            type: process.env.DB_TYPE as any,
-            host: process.env.DB_HOST,
-            port: parseInt(process.env.DB_PORT),
-            username: process.env.DB_USERNAME,
-            password: process.env.DB_PASSWORD,
-            database: process.env.DB_DATABASE,
-            serviceName: process.env.DB_SERVICE_NAME,
-            thickMode: true,
-            entities: [ParticipanteEntity, VoucherEntity, CampanhaEntity, RoletaEntity],
+            name:        process.env.DB_NAME,
+            type:        process.env.DB_TYPE as any,
+            host:        process.env.DB_HOST,
+            port:        parseInt(process.env.DB_PORT),
+            username:    process.env.DB_USERNAME,
+            password:    process.env.DB_PASSWORD,
+            database:    process.env.DB_DATABASE,
+            //serviceName: process.env.DB_SERVICE_NAME,
+            thickMode:   true,
+            entities:    [ParticipanteEntity, VoucherEntity, CampanhaEntity, RoletaEntity],
             synchronize: false,
         });
 

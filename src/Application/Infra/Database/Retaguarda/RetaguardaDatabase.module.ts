@@ -12,4 +12,4 @@ import { KEY_INJECTION } from "src/@metadata/keys";
   ],
   exports: [KEY_INJECTION.RETAGUARDA_DATA_SOURCE],
 })
-export class RetaguardaModule {}
+export class RetaguardaDatabaseModule {}

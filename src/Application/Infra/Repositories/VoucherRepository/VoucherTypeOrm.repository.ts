@@ -1,8 +1,15 @@
 import { VoucherEntity, VoucherEntityUniqueRefs, VoucherUpdateEntity } from "src/Application/Entities/Voucher.entity";
 import { IVoucherRepositoryContract } from "./IVoucherRepository.contract";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
 
 export class VoucherTypeOrmRepository implements IVoucherRepositoryContract {
 
+    constructor(
+        @InjectRepository(VoucherEntity)
+        private readonly voucherRepository: Repository<VoucherEntity>,
+    ) {}
+    
     create(entity: VoucherEntity): Promise<VoucherEntity> {
         throw new Error("Method not implemented.");
     }

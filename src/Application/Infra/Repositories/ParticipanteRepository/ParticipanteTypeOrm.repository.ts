@@ -1,9 +1,16 @@
 import { ParticipanteEntity, ParticipanteUpdateEntity } from "src/Application/Entities/Participante.entity";
 import { IParticipanteRepositoryContract } from "./IParticipanteRepository.contract";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
 
 
 export class ParticipanteTypeOrmRepository implements IParticipanteRepositoryContract {
-   
+    
+    constructor(
+        @InjectRepository(ParticipanteEntity)
+        private readonly participanteRepository: Repository<ParticipanteEntity>,
+    ) {}
+
     create(entity: ParticipanteEntity): Promise<ParticipanteEntity> {
         throw new Error("Method not implemented.");
     }
