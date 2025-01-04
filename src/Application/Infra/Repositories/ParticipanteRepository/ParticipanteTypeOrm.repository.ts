@@ -2,8 +2,9 @@ import { ParticipanteEntity, ParticipanteUpdateEntity } from "src/Application/En
 import { IParticipanteRepositoryContract } from "./IParticipanteRepository.contract";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
+import { Injectable } from "@nestjs/common";
 
-
+@Injectable()
 export class ParticipanteTypeOrmRepository implements IParticipanteRepositoryContract {
     
     constructor(

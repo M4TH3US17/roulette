@@ -2,7 +2,9 @@ import { CampanhaEntity, CampanhaEntityUniqueRefs, CampanhaUpdateEntity } from "
 import { ICampanhaRepositoryContract } from "./ICampanhaRepository.contract";
 import { Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
+import { Injectable } from "@nestjs/common";
 
+@Injectable()
 export class CampanhaTypeOrmRepository implements ICampanhaRepositoryContract {
 
     constructor(

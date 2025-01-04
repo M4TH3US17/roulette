@@ -1,7 +1,8 @@
-import { Inject } from "@nestjs/common";
+import { Inject, Injectable } from "@nestjs/common";
 import { KEY_INJECTION } from "src/@metadata/keys";
 import { IParticipanteRepositoryContract } from "src/Application/Infra/Repositories/ParticipanteRepository/IParticipanteRepository.contract";
 
+@Injectable()
 export class CreateParticipanteUseCase {
     constructor(
         @Inject(KEY_INJECTION.PARTICIPANTE_REPOSITORY_CONTRACT)

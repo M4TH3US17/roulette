@@ -2,9 +2,10 @@ import { RoletaEntity, RoletaUpdateEntity } from "src/Application/Entities/Rolet
 import { IRoletaRepositoryContract } from "./IRoletaRepository.contract";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
+import { Injectable } from "@nestjs/common";
 
-
-export class RoletaTypeOrmRepository implements IRoletaRepositoryContract {
+@Injectable()
+export class RoletaTypeOrmRepository implements IRoletaRepositoryContract {  
 
     constructor(
         @InjectRepository(RoletaEntity)

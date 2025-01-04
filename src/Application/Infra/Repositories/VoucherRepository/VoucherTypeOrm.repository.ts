@@ -2,7 +2,9 @@ import { VoucherEntity, VoucherEntityUniqueRefs, VoucherUpdateEntity } from "src
 import { IVoucherRepositoryContract } from "./IVoucherRepository.contract";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
+import { Injectable } from "@nestjs/common";
 
+@Injectable()
 export class VoucherTypeOrmRepository implements IVoucherRepositoryContract {
 
     constructor(
